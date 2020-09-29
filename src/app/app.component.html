@@ -1,0 +1,111 @@
+<!-- The content below is only a placeholder and can be replaced.
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+
+<router-outlet></router-outlet> -->
+
+<div class="wrapper">
+  <div class="header">
+    SpaceX Launch Programs
+  </div>
+  <div class="content">
+    <div class="content-wrapper">
+      <div class="filter-wrapper">
+        <div class="filter-column">
+          <h1>Filters</h1>
+          <p class="filter-title">
+            <span>Launch Year</span>
+          </p>
+          <div class="year-list">
+            <div class="filterColm" (click)="selectFilter($event, 'launch_year')">
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2006'}" data-value="2006">2006</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2008'}" data-value="2008">2008</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2010'}" data-value="2010">2010</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2012'}" data-value="2012">2012</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2014'}" data-value="2014">2014</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2016'}" data-value="2016">2016</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2018'}" data-value="2018">2018</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2020'}" data-value="2020">2020</span>
+            </div>
+            <div class="filterColm" (click)="selectFilter($event, 'launch_year')">
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2007'}" data-value="2007">2007</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2009'}" data-value="2009">2009</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2011'}" data-value="2011">2011</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2013'}" data-value="2013">2013</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2015'}" data-value="2015">2015</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2017'}" data-value="2017">2017</span>
+              <span class="list" [ngClass]="{'active-filter': selectedYear === '2019'}" data-value="2019">2019</span>
+            </div>
+          </div>
+    
+          <p class="filter-title">
+            <span>Successful Launch</span>
+          </p>
+          <div class="year-list">
+            <div class="filterColm" (click)="selectFilter($event, 'launch_success')">
+              <span class="list" [ngClass]="{'active-filter': successfulLaunch === 'true'}" data-value="true">True</span>
+            </div>
+            <div class="filterColm" (click)="selectFilter($event, 'launch_success')">
+              <span class="list" [ngClass]="{'active-filter': successfulLaunch === 'false'}" data-value="false">False</span>
+            </div>
+          </div>
+    
+          <p class="filter-title">
+            <span>Successful Landing</span>
+          </p>
+          <div class="year-list">
+            <div class="filterColm" (click)="selectFilter($event, 'launch_landing')">
+              <span class="list" [ngClass]="{'active-filter': successfulLanding === 'true'}" data-value="true">True</span>
+            </div>
+            <div class="filterColm" (click)="selectFilter($event, 'launch_landing')">
+              <span class="list" [ngClass]="{'active-filter': successfulLanding === 'false'}" data-value="false">False</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="data-wrapper" *ngIf="!dataLoader">
+        <div class="column" *ngFor="let item of data">
+          <img class="program-image" [src]="item.links.mission_patch_small" alt="mission patch">
+          <p class="mission-title">
+            <label>{{item.mission_name}}</label>
+          </p>
+          <ul class="mission-ids">
+            <label>Mission Ids:</label>
+            <li *ngFor="let mid of item.mission_id">{{mid}}</li>
+          </ul>
+          <p class="item-detail">
+            <label>Launch Year</label>: <label class="detail-value">{{item.launch_year}}</label>
+          </p>
+          <p class="item-detail">
+            <label>Successful Launch</label>: <label class="detail-value">{{item.launch_success}}</label>
+          </p>
+          <p class="item-detail">
+            <label>Successful Landing</label>: <label class="detail-value">{{item.launch_landing}}</label>
+          </p>
+        </div>        
+      </div>    
+      <div class="spinner-wrapper" *ngIf="dataLoader">
+        Loading Data...
+      </div>  
+    </div>
+  </div>
+  <div class="footer">
+    <span>Developed By:</span> Susheel Sharma
+  </div>
+</div>

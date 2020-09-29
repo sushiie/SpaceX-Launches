@@ -1,0 +1,222 @@
+/*Reset CSS*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,  pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+}
+article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section{ 
+    display:block;
+}
+nav ul {
+   list-style:none;
+}
+blockquote, q {
+   quotes:none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+   content:'';
+   content:none;
+}
+a {
+   margin:0;
+   padding:0;
+   font-size:100%;
+   vertical-align:baseline;
+   background:transparent;
+}
+/* change colors to suit your needs */
+ins {
+   background-color:#ff9;
+   color:#000;
+   text-decoration:none;
+}
+/* change colors to suit your needs */
+mark {
+   background-color:#ff9;
+   color:#000; 
+   font-style:italic;
+   font-weight:bold;
+}
+del {
+   text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+   border-bottom:1px dotted;
+   cursor:help;
+}
+table {
+   border-collapse:collapse;
+   border-spacing:0;
+}
+/* change border color to suit your needs */
+hr {
+   display:block;
+   height:1px;
+   border:0;   
+   border-top:1px solid #cccccc;
+   margin:1em 0;
+   padding:0;
+}
+input, select {
+   vertical-align:middle;
+}
+
+/*Reset CSS*/
+
+.wrapper {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid;
+    height: 100vh;
+    background: #e8e8e8;
+    padding: 10px;
+}
+
+.header {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.filter-column {
+    padding: 10px;
+}
+
+.column {
+    margin: 5px;
+    padding: 10px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.column h1 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.filter-title {
+    text-align: center;
+}
+
+.filter-title span {
+    font-size: 20px;
+    border-bottom: 1px solid #bbb6b6;
+    padding: 0 40px 3px;
+}
+
+.year-list {
+    display: flex;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.list {
+    list-style: none;
+    font-size: 18px;
+    width: 50%;
+    margin: 5px;
+    background: lightgreen;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.filterColm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 100%;
+}
+
+.program-image {
+    background:#e0e0e0;
+}
+
+.content-wrapper {
+    display: flex;
+}
+
+.data-wrapper {
+    width: calc(4*(100vw/5));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+.filter-wrapper {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.mission-title {
+    color: #4e7380;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 15px;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mission-ids {
+    margin-top: 10px;
+}
+
+.mission-ids label {
+    font-weight: 700;
+}
+
+.mission-ids li {
+    margin: 5px 35px;
+    color: #4e7380;
+}
+
+.item-detail {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.detail-value {
+    color: #4e7380;
+    font-weight: normal;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer span {
+    font-weight: bold;
+}
+
+.active-filter {
+    background-color: #28b728;
+}
+
+.spinner-wrapper {
+    font-size: 50px;
+    width: calc(400vw/5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
